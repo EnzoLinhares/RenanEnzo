@@ -1,5 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class VidaSystem : MonoBehaviour
@@ -11,7 +13,8 @@ public class VidaSystem : MonoBehaviour
     public Image[] coracao;
     public Sprite cheio;
     public Sprite vazio;
-    
+    [SerializeField] private string nomeDaProximaCena;
+
     void Start()
     {
        
@@ -21,6 +24,7 @@ public class VidaSystem : MonoBehaviour
     void Update()
     {
         SistemaCoracao();
+        EstadoMorto();
     }
 
     void SistemaCoracao()
@@ -60,4 +64,20 @@ public class VidaSystem : MonoBehaviour
 		}
 
     }
+
+    void EstadoMorto()
+    {
+        if(vida <= 0)
+        {
+            GetComponent<PlayerSystem>().enabled = false;
+            Destroy(gameObject, 1.0f);
+
+            if (gameObject.scene.isLoaded)
+            {
+                SceneManager.LoadScene("TelaDerrota");
+            }
+        }
+    }
+
+   
 }

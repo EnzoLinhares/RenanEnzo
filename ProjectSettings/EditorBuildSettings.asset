@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay.unity
     guid: cead0153d98ef744580880ff472f8613
+  - enabled: 1
+    path: Assets/Scenes/TelaDerrota.unity
+    guid: 36dd8658f68c25c46a67c5a1c8de4e1d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

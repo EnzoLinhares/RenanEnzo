@@ -19,4 +19,9 @@ public class TrocarParaGame : MonoBehaviour
     {
         SceneManager.LoadScene(GamePlay);
     }
+
+    public void VoltarMenu(string Menu)
+    {
+        SceneManager.LoadScene(Menu);
+    }
 }
