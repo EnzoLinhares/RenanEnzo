@@ -14,7 +14,7 @@ public class PlayerSystem : MonoBehaviour
     {
 
         physicsPlayer = GetComponent<Rigidbody2D>();
-
+        
     }
 
     

@@ -7,13 +7,19 @@ public class TriggerDamage : MonoBehaviour
 
     public VidaSystem heart;
 
+    private void Start()
+    {
+        GameObject player = GameObject.Find("Player");
+        heart = player.GetComponent<VidaSystem>();
+    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     { 
-        if (collision.gameObject.tag == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
-           
+            Debug.Log("oi");
             heart.vida--;
+            Destroy(gameObject);
         }
     }
    
